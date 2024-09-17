@@ -10,14 +10,16 @@ function dados() {
 const usuarios = dados();
 
 function login() {
-    const log = document.querySelector('#login').value;
-    const senha = document.querySelector('#password').value;
+    const log = document.querySelector('#email').value;
+    const senha = document.querySelector('#senha').value;
+    const errorMessage = document.querySelector('#error-message');
     
     for (let i = 0; i < usuarios.length; i++) {
-        if (log === usuarios[i].login && senha === usuarios[i].password) {
-            alert('Você Logou!');
+        if (log === usuarios[i].email && senha === usuarios[i].password) {
+            alert(`Bem-vindo, ${usuarios[i].login}!`);
+            errorMessage.textContent = ''; // Limpa a mensagem de erro
             return;
         }
     }
-    alert('Login ou senha incorretos!');
+    errorMessage.textContent = 'Login ou senha incorretos!';
 }
