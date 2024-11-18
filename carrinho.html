@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrinho de Compras</title>
-<link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <body class="naruto-bg naruto-text">
     <nav class="navbar navbar-expand-lg naruto-navbar">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -27,46 +27,78 @@
             </form>
         </div>
     </nav>
-<div class="container">
-<h1>Carrinho de Compras</h1>
-<div class="cart">
-<div class="item">
-<div class="item-image">
-<img src="imagens/boneco.png" alt="Item 1">
-</div>
-<div class="item-details">
-<h2>Boneco colécionável do personagem Naruto</h2>
-<p>Preço: R$60,00</p>
-<button>Remover</button>
-</div>
-</div>
-<div class="item">
-<div class="item-image">
-<img src="imagens/colar.png" alt="Item 2">
-</div>
-<div class="item-details">
-<h2>Colar</h2>
-<p>Preço: R$30,00</p>
-<button>Remover</button>
-</div>
-</div>
-<div class="cart-summary">
-<p>Total: R$90,00</p>
-<button>Finalizar Compra</button>
-</div>
-</div>
-</div>
-<footer>
-    <div class="roda">
-        <div class="row">
-            <p></p>
-            <div class="column">
-                Desenvolvido por:<br>
-                <strong><i><u>Felipe de Souza Ferreira<br>Guilherme Coelho<br>Pedro Henrique dos Santos<br></u></i></strong><br>
+
+    <div class="container mt-5">
+        <h1>Carrinho de Compras</h1>
+        <div class="cart">
+            <div id="cart-items"></div> <!-- Lista de itens do carrinho -->
+            <div class="cart-summary">
+                <p id="total-price">Total: R$ 0,00</p>
+                <button data-toggle="modal" data-target="#paymentModal" class="btn btn-success">Finalizar Compra</button>
             </div>
         </div>
     </div>
-</footer>
+
+    <!-- Modal para seleção de método de pagamento -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Selecione o Método de Pagamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="payment-method">Método de Pagamento</label>
+                            <select class="form-control" id="payment-method">
+                                <option value="cartao">Cartão de Crédito</option>
+                                <option value="boleto">Boleto Bancário</option>
+                                <option value="debito">Cartão de Débito</option>
+                                <option value="pix">Pix</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <!-- Espaço para exibir a imagem do método de pagamento -->
+                    <div id="payment-image-container" style="display: none; text-align: center;">
+                        <img id="credit-card-image" src="imagens/cartaoimagens.jpeg" alt="Imagem do Cartão de Crédito" style="max-width: 100%; height: auto; display: none;" />
+                        <img id="debit-card-image" src="imagens/cartaoimagens.jpeg" alt="Imagem do Cartão de Débito" style="max-width: 100%; height: auto; display: none;" />
+                        <img id="pix-image" src="imagens/qrcode.jfif" alt="Imagem do Pix" style="max-width: 100%; height: auto; display: none;" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirm-payment">Confirmar Pagamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exibição da compra finalizada -->
+    <div id="final-purchase-message" class="container mt-5" style="display: none;">
+        <h2>Compra Finalizada com Sucesso!</h2>
+        <p id="payment-method-confirmation"></p>
+        <button class="btn btn-primary" onclick="window.location.href='index.html'">Voltar para a Loja</button>
+    </div>
+
+    <footer>
+        <div class="roda">
+            <div class="row">
+                <p></p>
+                <div class="column">
+                    Desenvolvido por:<br>
+                    <strong><i><u>Felipe de Souza Ferreira<br>Guilherme Coelho<br>Pedro Henrique dos Santos<br></u></i></strong><br>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
- 

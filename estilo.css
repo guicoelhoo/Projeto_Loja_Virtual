@@ -213,3 +213,103 @@ body {
 .footer p, .footer strong {
     margin: 0;
 }
+/* Novo estilo para a página de carrinho */
+.cart-page-bg {
+    background-color: #1a1a1a; /* Fundo sólido escuro */
+    color: #fff; /* Cor do texto */
+    font-family: 'Arial', sans-serif;
+}
+
+.cart-container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo translúcido no container */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para os itens do carrinho */
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.cart-item-details h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.cart-item-details button.remove-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item-details button.remove-item:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para o resumo do carrinho */
+.cart-summary {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.cart-summary button.checkout-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-summary button.checkout-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Rodapé específico para a página de carrinho */
+footer.cart-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff4500;
+    padding: 20px 0;
+    text-align: center;
+}
+button.remove-item {
+    margin-left: 10px;  /* Espaçamento à esquerda do botão */
+    margin-right: 10px; /* Espaçamento à direita do botão */
+}
+.cart-item {
+    margin-bottom: 10px; /* Espaçamento entre os itens do carrinho */
+}
+
+.cart-item button {
+    margin-left: 10px;  /* Ajuste do espaçamento do botão dentro do item */
+}
